@@ -1,5 +1,5 @@
 import metapy
-
+##
 def tokens_lowercase(doc):
     #Write a token stream that tokenizes with ICUTokenizer (use the argument "suppress_tags=True"), 
     #lowercases, removes words with less than 2 and more than 5  characters
