@@ -7,6 +7,11 @@ def tokens_lowercase(doc):
     '''Place your code here'''
     
     tok = metapy.analyzers.ICUTokenizer(supress_tags=True)
+    tok = metapy.analyzers.LowercaseFilter(tok)
+    tok = metapy.analyzers.LengthFilter(tok, min=2, max=5)
+    tok = metapy.analyzers.Porter2Filter(tok)
+    a = metapy.analyzers.NGramWordAnalyzer(3,tok)
+    trigrams = a.analyze(doc)
     #leave the rest of the code as is
     tok.set_content(doc.content())
     tokens, counts = [], []
